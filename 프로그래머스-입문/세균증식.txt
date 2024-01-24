@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+
+        //1. 입력 받기
+        Scanner sc = new Scanner(System.in);
+        int n =7;
+        int t=15;
+
+        int x = (int)Math.pow(2,t);
+        int num = n*x;
+        
+        System.out.println(num);
+    }
+}

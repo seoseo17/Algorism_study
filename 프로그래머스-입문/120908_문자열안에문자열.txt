@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+TIP To bRunb code, press shortcut actionId=Run or
+ click the icon src=AllIcons.Actions.Execute icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+
+        1. 입력 받기
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+
+        int answer = 1;
+
+        if(str1.contains(str2)){
+            System.out.println(answer);
+        }else {
+            answer=2;
+            System.out.println(answer);
+        }
+
+        System.out.println(str1+ ,+str2);
+
+    }
+}

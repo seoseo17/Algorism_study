@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+
+        //1. 입력 받기
+        Scanner sc = new Scanner(System.in);
+        String[] s1 = {"n","omg"};
+        String[] s2 = {"m", "dot"};
+
+        int count = 0;
+        for (int i = 0; i < s1.length; i++) {
+            for (int j = 0; j < s2.length; j++) {
+                if(s1[i].equals(s2[j])){
+                    count++;
+                }
+            }
+        }
+        System.out.println("count = " + count);
+
+    }
+}
