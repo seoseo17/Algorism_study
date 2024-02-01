@@ -1,0 +1,38 @@
+package main.java;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.*;
+
+class Solution {
+    public int solution(int[] sides) {
+        int answer = 0;
+        List<Integer> list = new ArrayList<>();
+
+        //가장 긴 변의 길이는 다른 두 변의 길이의 합보다 작아야 합니다.
+        // [1,2] : 긴 변 2인 경우 , 2만 가능
+        // [3,6] : 6 가장 긴 경우 ->4,5,6
+        //         x 가 가장 긴 경우 -> 7,8
+        Arrays.sort(sides);
+        int sides_sum = sides[0]+sides[1]; //9
+        int sides_max = sides[1]; //6
+
+        //case1: sides_max 가장 긴 경우
+        int x = sides[1];
+
+        while (x+sides[0] > sides_max){
+            list.add(x);
+            x--;
+        }
+
+        //case2: side_num보다 x가 작아야 하는 경우
+        x= sides[1]+1;
+        while (sides_sum > x ){
+            list.add(x);
+            x++;
+        }
+
+        return list.size();
+    }
+}
