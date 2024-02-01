@@ -1,0 +1,23 @@
+package main.java;
+
+class Solution {
+    public int solution(int[] numbers, int k) {
+        int answer = 0;
+
+        //1, 2, 3, 4 / 2
+        int count = 1;
+        int index = 0;
+        int length = numbers.length;
+
+        while (true){
+            if(count == k){
+                break;
+            }
+            index = (index+2)%length;
+            count ++;
+
+        }
+        answer = numbers[index];
+        return answer;
+    }
+}
