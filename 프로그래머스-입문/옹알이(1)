@@ -1,0 +1,20 @@
+class Solution {
+    public int solution(String[] babbling) {
+
+        // "aya", "ye", "woo", "ma" 네 가지 발음을 최대 한 번씩 사용해 조합한
+        String[] strings = {"aya", "ye", "woo", "ma"};
+
+        int answer = 0;
+
+        for (int s=0;s< babbling.length;s++){
+            for (int i = 0; i <strings.length ; i++) {
+                babbling[s] = babbling[s].replace(strings[i]," ");
+            }
+
+            if (babbling[s].trim().length() == 0) answer++;
+        }
+
+
+        return answer;
+    }
+}
