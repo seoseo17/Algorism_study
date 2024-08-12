@@ -1,0 +1,46 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    /**
+     * 구현
+     * 상하좌우
+     * */
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        String str = br.readLine();
+        char[] chars = str.toCharArray();
+
+        int[][] arr = new int[n][n];
+        int[] dx = {0,-1,0,1};
+        int[] dy = {1,0,-1,0};
+        char[] moveTypes = {'R','U','L','D'};
+
+        int x = 0;
+        int y = 0;
+
+        for (char c : chars){
+            for (int i = 0; i < 4; i++) {
+
+                if (moveTypes[i] == c){
+                    int nx = x+dx[i];
+                    int ny = y+dy[i];
+
+                    if (nx < 0 || nx >= n || ny <0 || ny >= n) continue;
+
+                    x = nx;
+                    y = ny;
+
+                }
+            }
+        }
+        System.out.printf("%d %d",x+1,y+1);
+    }
+}
+
+
