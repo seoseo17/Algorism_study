@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    /**
+     * 구현
+     * 왕실의 나이트
+     * */
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        String str = bf.readLine();
+        int x = str.charAt(0)-'a';
+        int y = (str.charAt(1)-'0')-1;
+
+        int[][] board = new int[8][8];
+        int[] dx = {1,-1,-2,-2,1,-1,2,2};
+        int[] dy = {2,2,1,-1,-2,-2,1,-1};
+
+        int count = 0;
+
+        for (int i = 0; i < 8; i++) {
+            int nx = x+dx[i];
+            int ny = y+dy[i];
+
+            if (nx <0 || nx >= 8 || ny <0 || ny>=8) continue;
+            count++;
+        }
+        System.out.println(count);
+
+    }
+
+}
+
+
